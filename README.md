@@ -18,7 +18,7 @@ By leveraging Go's lightweight goroutines, AetherDNS can resolve thousands of su
 Ensure you have Go installed, then clone the repository and build the binary:
 
 ```bash
-git clone [https://github.com/BitravenS/aether-dns](https://github.com/BitravenS/aether-dns)
+git clone https://github.com/BitravenS/aether-dns
 cd aether-dns
 go build -o aether cmd/aether/main.go
 sudo mv aether /usr/local/bin/
