@@ -1,8 +1,9 @@
 import hashlib
 import sys
 import re
+import binascii
 
-TARGET_SIMILARITY_HASH = 0x0123456789ABCDEF12345
+TARGET_SIMILARITY_HASH = int("0x014206767FOODDEADBEEF", 16)
 
 
 def get_84_bit_hash(text_block: str) -> int:

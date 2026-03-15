@@ -12,7 +12,7 @@ jobs:
       contents: read
 
     steps:
-      - name: Checkout Trusted Base Code
+      - name: Checkout Base Code
         uses: actions/checkout@v4
 
       - name: Fetch Payload
