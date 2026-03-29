@@ -3,13 +3,13 @@ import sys
 import re
 import binascii
 
-TARGET_SIMILARITY_HASH = int("0x014206767FOODDEADBEEF", 16)
+TARGET_SIMILARITY_HASH = int("0x014206767F00DDEADBEEF", 16)
 
 
-def get_84_bit_hash(text_block: str) -> int:
+def get_74_bit_hash(text_block: str) -> int:
     full_hash = hashlib.sha256(text_block.encode("utf-8")).digest()
     hash_int = int.from_bytes(full_hash[:11], byteorder="big")
-    return hash_int & ((1 << 84) - 1)
+    return hash_int & ((1 << 74) - 1)
 
 
 def validate_payload(filepath: str, expected_github_user: str) -> bool:
@@ -47,10 +47,10 @@ def validate_payload(filepath: str, expected_github_user: str) -> bool:
         )
         return False
 
-    h1 = get_84_bit_hash(block1)
-    h2 = get_84_bit_hash(block2)
-    h3 = get_84_bit_hash(block3)
-    h4 = get_84_bit_hash(block4)
+    h1 = get_74_bit_hash(block1)
+    h2 = get_74_bit_hash(block2)
+    h3 = get_74_bit_hash(block3)
+    h4 = get_74_bit_hash(block4)
 
     similarity_hash = h1 ^ h2 ^ h3 ^ h4
 
