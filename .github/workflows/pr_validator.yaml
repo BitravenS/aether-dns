@@ -54,4 +54,3 @@ jobs:
           
           Submit this ticket at `http://ticket.bitraven.pro:3001` to claim your flag."
           
-          gh pr close $PR_URL
