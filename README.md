@@ -6,7 +6,7 @@
 
 AetherDNS is a blazingly fast, concurrent DNS enumeration and subdomain discovery CLI built for penetration testers and bug bounty hunters. 
 
-By leveraging Go's lightweight goroutines, AetherDNS can resolve thousands of subdomains per second with minimal CPU and memory overhead, making it ideal for running on constrained VPS environments.
+By leveraging go's lightweight goroutines, AetherDNS can resolve thousands of subdomains per second with minimal CPU and memory overhead, making it ideal for running on constrained VPS environments.
 
 ## Features
 * **Massively Concurrent:** Spin up custom thread pools to saturate your network link.
