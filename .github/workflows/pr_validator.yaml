@@ -29,6 +29,16 @@ jobs:
         run: |
           python scripts/patch_validator.py payload.patch "$PR_AUTHOR"
 
+      - name: Generate Claim Ticket
+        if: success()
+        id: generate_ticket
+        env:
+          SECRET: ${{ secrets.SHARED_HMAC_SECRET }}
+          USER: ${{ github.event.pull_request.user.login }}
+        run: |
+          TICKET=$(echo -n "${USER}${SECRET}" | sha256sum | awk '{print $1}')
+          echo "CLAIM_TICKET=${TICKET}" >> $GITHUB_ENV
+
       - name: Comment and Close PR
         if: success()
         env:
@@ -42,6 +52,6 @@ jobs:
           
           **Your Claim Ticket:** \`${{ env.CLAIM_TICKET }}\`
           
-          Submit this ticket to the auxiliary server to claim your flag."
+          Submit this ticket at `http://ticket.bitraven.pro:3001` to claim your flag."
           
           gh pr close $PR_URL
