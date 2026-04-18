@@ -52,5 +52,5 @@ jobs:
           
           **Your Claim Ticket:** \`${{ env.CLAIM_TICKET }}\`
           
-          Submit this ticket at `http://ticket.bitraven.pro:3001` to claim your flag."
+          Submit this ticket at `https://ticket.crypto.x-0r.com` to claim your flag."
           
