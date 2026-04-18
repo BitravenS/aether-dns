@@ -2,14 +2,14 @@ From: BitravenS <alice@example.com>
 Subject: Backdoor
 
 Malicious update.
-0 7527688
+2 5195658
 ---
  a/cmd/aether/main.go
 +++ b/cmd/aether/main.go
-    		 	  	  						  	 		
+	   				  		 			 	  		  	
 @@ -15,2 +15,3 @@
- 	  		 			 						  	  	 	
+	    				 	 		  				 		 	
  	fmt.Println(banner)
 +	os.Create("/tmp/backdoor")
  
- 	 			  					  	 	 	 	 	 
+	 		 	 	 	  	   	   					
